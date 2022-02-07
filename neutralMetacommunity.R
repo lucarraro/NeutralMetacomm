@@ -3,7 +3,7 @@ library(OCNet) # Generate OCNs
 library(betapart) # Calculate beta diversity  
 library(usedist) # Treat "dist" objects
 
-setwd("\\\\eawag/userdata/carrarlu/Desktop/Luca/Teaching/PhD class") # change to current directory
+setwd("C:/Users/carrarlu/Documents/Git/NeutralMetacomm") # change to current directory
 source("metacomm_model.R") # Function running the neutral metacommunity model
 source("eval_evenness.R") # Function to compute Pielou's evenness
 
@@ -27,7 +27,7 @@ distanceMatrix <- OCN$AG$downstreamPathLength + OCN$AG$downstreamLengthUnconnect
                                                                            # It contains both downstream and upstream (unweighted) distances
 dist_mat <- as.dist(distanceMatrix) # transform into "dist" object
 distanceToOutlet <- OCN$AG$downstreamPathLength[,OCN$AG$outlet] # vector of distances to the outlet
-wClosenessCentrality <- rowSums(exp(-distanceMatrix/2000)) # weighted closeness centrality 
+wClosenessCentrality <- rowSums(exp(-distanceMatrix/2000)) # weighted closeness centrality ("how many patches are available close to a given node?")
                                                            # as the scale length (2000) increases, this variable passes from local characteristics (degree) 
                                                            # to global (total number of connected nodes) 
 
