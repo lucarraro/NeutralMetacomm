@@ -7,6 +7,11 @@ setwd("C:/Users/carrarlu/Documents/Git/NeutralMetacomm") # change to current dir
 source("metacomm_model.R") # Function running the neutral metacommunity model
 source("eval_evenness.R") # Function to compute Pielou's evenness
 
+## ALTERNATIVE IF LOADING OCNET DOESN'T WORK - uncomment the following 3 lines
+# library(spam)
+# library(fields)
+# source("draw_thematic_OCN.R")  
+
 # LOAD OCN ####
 if (!file.exists("OCN.rda")){
   set.seed(2); 
