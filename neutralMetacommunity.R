@@ -94,7 +94,7 @@ plot(dist_mat, betaDiv_mat$beta.jtu,ylab="Turnover",xlab="Along-stream distance 
 # rank abundance curves
 x11(); plot(sort(colSums(PA_mat),decreasing=TRUE)/nNodes,type="l",
      ylab="Relative abundance",xlab="Rank",log="y",ylim=c(0.001,1)) # rank abundance (based on presence at a site)
-
+title("Rank abundance curves")
 hh <- hist(speciesDB[,2], breaks=0.5:(speciesCount+0.5),plot=F) # rank abunance (based on true abundance)
 points(sort(hh$counts[hh$counts>0],decreasing=TRUE)/nNodes,col="red",type="l")
 legend("topright",legend=c("Based on presence at-a-site","Based on true abundance"),lty=c(1,1),col=c("black","red"))
